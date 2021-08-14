@@ -1,4 +1,4 @@
-﻿@model a.Models.Produto
+﻿@model Modeloa.Cadastros.Produto
 @{
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
     ViewBag.Title = "Visualizando detalhes do PRODUTO a ser removido";
@@ -8,6 +8,8 @@
         Visualizando detalhes do PRODUTO a ser removido
     </div>
     <div class="panel-body">
+        @Html.Partial("~/Views/Produtos/_PartialDetailsContentPanel.cshtml", Model)
+    </div><div class="panel-body">
         <div class="form-group">
             @Html.LabelFor(model => model.Nome)<br />
             <div class="input-group">
