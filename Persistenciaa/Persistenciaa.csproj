@@ -52,9 +52,18 @@
     <Compile Include="DAL\Cadastros\FabricanteDAL.cs" />
     <Compile Include="DAL\Cadastros\ProdutoDAL.cs" />
     <Compile Include="DAL\Tabelas\CategoriaDAL.cs" />
+    <Compile Include="Migrations\202108140122131_InitialCreate.cs" />
+    <Compile Include="Migrations\202108140122131_InitialCreate.Designer.cs">
+      <DependentUpon>202108140122131_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202108140122131_InitialCreate.resx">
+      <DependentUpon>202108140122131_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modeloa\Modeloa.csproj">
       <Project>{f758df91-e4d7-4793-8143-a0751c0e6415}</Project>
