@@ -5,53 +5,52 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Modeloa.Cadastros;
-using Serviçoa.Cadastros;
+//using a.Context;
+using Modeloa.Tabelas;
+using Serviçoa.Tabelas;
 
-namespace a.Controllers
+namespace a.Areas.Tabelas.Controllers 
 {
-    public class FabricantesController : Controller
+    public class CategoriasController : Controller
     {
         //private EFContext context = new EFContext();
         // GET: Fabricantes
-        
-        private FabricanteServico fabricanteServico = new FabricanteServico();
-
-        private ActionResult ObterVisaoFabricantePorId(long? id)
+        private CategoriaServico categoriaServico = new CategoriaServico();
+        private ActionResult ObterVisaoCategoriaPorId(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(
                 HttpStatusCode.BadRequest);
             }
-            Fabricante fabricante = fabricanteServico.ObterFabricantePorId((long)id);
-            if (fabricante == null)
+            Categoria categoria = categoriaServico.ObterCategoriaPorId((long)id);
+            if (categoria == null)
             {
                 return HttpNotFound();
             }
-            return View(fabricante);
+            return View(categoria);
         }
-        private ActionResult GravarFabricante(Fabricante fabricante)
+        private ActionResult GravarCategoria(Categoria categoria)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    fabricanteServico.GravarFabricante(fabricante);
+                    categoriaServico.GravarCategoria(categoria);
                     return RedirectToAction("Index");
                 }
-                return View(fabricante);
+                return View(categoria);
             }
             catch
             {
-                return View(fabricante);
+                return View(categoria);
             }
         }
 
-        // GET: Fabricantes
+        // GET: Categorias
         public ActionResult Index()
         {
-            return View(fabricanteServico.ObterFabricantesClassificadosPorNome());
+            return View(categoriaServico.ObterCategoriasClassificadasPorNome());
         }
         // GET: Create
         public ActionResult Create()
@@ -61,35 +60,32 @@ namespace a.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Fabricante fabricante)
+        public ActionResult Create(Categoria categoria)
         {
-            return GravarFabricante(fabricante);
+            return GravarCategoria(categoria);
         }
-
         // GET: Edit
         public ActionResult Edit(long? id)
         {
-            return ObterVisaoFabricantePorId(id);
+            return ObterVisaoCategoriaPorId(id);
         }
-
         // POST: Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Fabricante fabricante)
+        public ActionResult Edit(Categoria categoria)
         {
-            return GravarFabricante(fabricante);
+            return GravarCategoria(categoria);
         }
-
         // GET: Details
         public ActionResult Details(long? id)
         {
-            return ObterVisaoFabricantePorId(id);
+            return ObterVisaoCategoriaPorId(id);
         }
 
         // GET: Delete
         public ActionResult Delete(long? id)
         {
-            return ObterVisaoFabricantePorId(id);
+            return ObterVisaoCategoriaPorId(id);
         }
         // POST: Delete
         [HttpPost]
@@ -98,8 +94,8 @@ namespace a.Controllers
         {
             try
             {
-                Fabricante fabricante = fabricanteServico.EliminarFabricantePorId(id);
-                TempData["Message"] = "Fabricante " + fabricante.Nome.ToUpper() + " foi removido";
+                Categoria categoria = categoriaServico.EliminarCategoriaPorId(id);
+                TempData["Message"] = "Categoria " + categoria.Nome.ToUpper() + " foi removido";
                 return RedirectToAction("Index");
             }
             catch

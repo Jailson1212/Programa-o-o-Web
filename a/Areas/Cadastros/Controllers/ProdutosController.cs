@@ -9,7 +9,7 @@ using Modeloa.Cadastros;
 using Serviçoa.Cadastros;
 using Serviçoa.Tabelas;
 
-namespace a.Controllers
+namespace a.Areas.Cadastros.Controllers
 {
     public class ProdutosController : Controller
     {

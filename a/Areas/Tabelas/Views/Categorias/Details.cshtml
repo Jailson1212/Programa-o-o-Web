@@ -1,0 +1,19 @@
+﻿@model Modeloa.Tabelas.Categoria
+@{
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    ViewBag.Title = "Visualizando detalhes de uma CATEGORIA";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Visualizando detalhes de uma CATEGORIA
+    </div>
+    <div class="panel-body">
+        @Html.Partial("~/Views/Categorias/_PartialDetailsContentPanel.cshtml", Model)
+    </div>
+    <div class="panel-footer panel-info">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.CategoriaId },
+        new { @class = "btn btn-info" })
+        @Html.ActionLink("Retornar para a listagem", "Index", null,
+        new { @class = "btn btn-info" })
+    </div>
+</div>
