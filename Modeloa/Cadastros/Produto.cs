@@ -26,5 +26,12 @@ namespace Modeloa.Cadastros
         public long? FabricanteId { get; set; }
         public Categoria Categoria { get; set; }
         public Fabricante Fabricante { get; set; }
+        public string LogotipoMimeType { get; set; }
+        public byte[] Logotipo { get; set; }
+        public string NomeArquivo { get; set; }
+        public long TamanhoArquivo { get; set; }
+        public long Percentual { get; set; }
+        public double Preço { get; set; }
+        public bool Lançamento { get; set; }
     }
 }

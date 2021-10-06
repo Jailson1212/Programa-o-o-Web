@@ -1,4 +1,8 @@
 ﻿@model Modeloa.Cadastros.Produto
+@if (Model.Lançamento == true)
+{
+    <h3>Produto Lançamento</h3>
+}
 <div class="form-group">
     @Html.LabelFor(model => model.Nome)<br />
     <div class="input-group">
@@ -38,6 +42,38 @@
             <i class="glyphicon glyphicon-user"></i>
         </span>
         @Html.EditorFor(model => model.Fabricante.Nome, new
+        {
+            htmlAttributes = new
+            {
+                @class = "form-control",
+        disabled = "disabled"
+            }
+        })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Preço)<br />
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="glyphicon glyphicon-user"></i>
+        </span>
+        @Html.EditorFor(model => model.Preço, new
+        {
+            htmlAttributes = new
+            {
+                @class = "form-control",
+        disabled = "disabled"
+            }
+        })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.Percentual)<br />
+    <div class="input-group">
+        <span class="input-group-addon">
+            <i class="glyphicon glyphicon-user"></i>
+        </span>
+        @Html.EditorFor(model => model.Percentual, new
         {
             htmlAttributes = new
             {
