@@ -271,6 +271,8 @@
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Edit.cshtml" />
     <Content Include="Areas\Home\Views\web.config" />
     <Content Include="Areas\Home\Views\Interface\Index.cshtml" />
+    <Content Include="Areas\Home\Views\Interface\DetailsProduto.cshtml" />
+    <Content Include="Areas\Home\Views\Interface\DetailsCategoria.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

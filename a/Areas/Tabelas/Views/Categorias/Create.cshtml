@@ -41,9 +41,21 @@
         </div>
     </div>
 }
-@section ScriptPage {
-    <script src="~/Scripts/jquery.validate.min.js">
+@section styles{
+    <link href="@Url.Content("~/content/DataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />
+}
+@section ScriptPage{
+    <script src="@Url.Content("~/scripts/DataTables/jquery.dataTables.js")"></script>
+    <script src="@Url.Content("~/scripts/DataTables/dataTables.bootstrap.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.table').dataTable();
+        });
     </script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').removeClass("active");
+            $('#liCategorias').addClass("active");
+        });
     </script>
 }

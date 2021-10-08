@@ -12,18 +12,18 @@
     </div>
     <div class="panel-body">
         @Html.Partial("~/Areas/Cadastros/Views/Produtos/_PartialEditContentPanel.cshtml", Model)
-    </div>
-    @Html.HiddenFor(model => model.ProdutoId)
-    @Html.HiddenFor(model => model.LogotipoMimeType)
-    @Html.HiddenFor(model => model.Logotipo)
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" name="chkDestacarProduto" value=Sim />
-        </label>
-    </div>
-    <div class="col-md-offset-7 col-md-5">
-        <div class="form-group">
-            @Html.TextBox("logotipo", "", new { type = "file" }) <br />
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="chkDestacarProduto" value=Sim /> Lançamento
+            </label>
+        </div>
+        @Html.HiddenFor(model => model.ProdutoId)
+        @Html.HiddenFor(model => model.LogotipoMimeType)
+        @Html.HiddenFor(model => model.Logotipo)
+        <div class="col-md-offset-7 col-md-5">
+            <div class="form-group">
+                @Html.TextBox("logotipo", "", new { type = "file" }) <br />
+            </div>
         </div>
     </div>
     <div class="panel-footer panel-info">

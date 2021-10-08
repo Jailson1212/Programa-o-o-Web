@@ -1,11 +1,11 @@
 ﻿@model Modeloa.Cadastros.Fabricante
 <div class="form-group">
-    @Html.LabelFor(model => model.Fabricante.Nome)<br />
+    @Html.LabelFor(model => model.Nome)<br />
     <div class="input-group">
         <span class="input-group-addon">
             <i class="glyphicon glyphicon-user"></i>
         </span>
-        @Html.EditorFor(model => model.Fabricante.Nome, new
+        @Html.EditorFor(model => model.Nome, new
         {
             htmlAttributes = new
             {
